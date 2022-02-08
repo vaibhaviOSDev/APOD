@@ -17,6 +17,8 @@ class SearchImageViewController: UIViewController {
     @IBOutlet private weak var searchButton: UIButton!
 
     // MARK:  Properties
+    
+    var navigationDelegate: NavigationDelegate?
         
     /// Picker view for the date selection
     private lazy var datePicker: UIDatePicker = {
@@ -37,8 +39,16 @@ class SearchImageViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func searchButtonPressed() {
-
+        guard let navigationDelegate = navigationDelegate,
+              let date = dateTextField.text,
+              !date.isEmpty else {
+            return
+        }
+        navigationDelegate.presentImageDetailsViewController(date: date)
+        dateTextField.resignFirstResponder()
+        dateTextField.text = ""
     }
+    
     // MARK: - Date Picker Events
     
     @objc private func onDateSelection() {
