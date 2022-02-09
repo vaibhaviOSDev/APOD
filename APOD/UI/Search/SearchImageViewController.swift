@@ -15,6 +15,9 @@ class SearchImageViewController: UIViewController {
     @IBOutlet private weak var dateTextField: UITextField!
     /// Button for executing the search action
     @IBOutlet private weak var searchButton: UIButton!
+    /// Button for displaying the listing of the Images marked as favourites
+    @IBOutlet private weak var displayFavouritesListButton: UIButton!
+
 
     // MARK:  Properties
     
@@ -23,9 +26,9 @@ class SearchImageViewController: UIViewController {
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
-        setUpPickerView()
         super.viewDidLoad()
+        view.backgroundColor = .white
+        setUpPickerView()
     }
     // MARK: - IBAction
     
@@ -39,14 +42,16 @@ class SearchImageViewController: UIViewController {
         dateTextField.resignFirstResponder()
         dateTextField.text = ""
     }
-    
+    @IBAction func displayListOfFavourites() {
+        
+    }
     // MARK: - Date Picker Events
     
     @objc private func onDateSelection() {
         guard let datePickerView = dateTextField.inputView as? UIDatePicker else { return }
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = Constants.DateFormat
         dateTextField.text = dateFormatter.string(from: datePickerView.date)
         dateTextField.resignFirstResponder()
     }
