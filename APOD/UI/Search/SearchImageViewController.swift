@@ -18,17 +18,8 @@ class SearchImageViewController: UIViewController {
 
     // MARK:  Properties
     
-    var navigationDelegate: NavigationDelegate?
-        
-    /// Picker view for the date selection
-    private lazy var datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker()
-        datePicker.preferredDatePickerStyle = .inline
-        datePicker.maximumDate = Date()
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
-        return datePicker
-    }()
-
+    var navigationDelegate: PresentImageDetailViewDelegate?
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -52,22 +43,21 @@ class SearchImageViewController: UIViewController {
     // MARK: - Date Picker Events
     
     @objc private func onDateSelection() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        dateTextField.text = formatter.string(from: datePicker.date)
-        self.view.endEditing(true)
+        guard let datePickerView = dateTextField.inputView as? UIDatePicker else { return }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateTextField.text = dateFormatter.string(from: datePickerView.date)
+        dateTextField.resignFirstResponder()
     }
     @objc private func cancelDateSelection() {
-        self.view.endEditing(true)
+        dateTextField.text = ""
+        dateTextField.resignFirstResponder()
     }
     private func setUpPickerView() {
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(onDateSelection))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDateSelection))
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        dateTextField.inputAccessoryView = toolbar
-        dateTextField.inputView = datePicker
+        dateTextField.datePicker(target: self,
+                                  doneAction: #selector(onDateSelection),
+                                  cancelAction: #selector(cancelDateSelection),
+                                  datePickerMode: .date)
     }
 }
