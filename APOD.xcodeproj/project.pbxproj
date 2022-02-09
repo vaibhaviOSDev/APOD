@@ -16,6 +16,17 @@
 		FB9D4C8F27B2FBB70056ECC2 /* SearchImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9D4C8E27B2FBB70056ECC2 /* SearchImageViewController.storyboard */; };
 		FB9D4C9227B2FC670056ECC2 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C9127B2FC670056ECC2 /* ImageDetailsViewController.swift */; };
 		FB9D4C9427B2FC7B0056ECC2 /* ImageDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB9D4C9327B2FC7B0056ECC2 /* ImageDetailsViewController.storyboard */; };
+		FB9D4C9827B305C50056ECC2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C9727B305C50056ECC2 /* Image.swift */; };
+		FB9D4C9A27B305F20056ECC2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C9927B305F20056ECC2 /* ImageLoader.swift */; };
+		FB9D4C9C27B38A770056ECC2 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C9B27B38A770056ECC2 /* RemoteImageLoader.swift */; };
+		FB9D4C9E27B38AAB0056ECC2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C9D27B38AAB0056ECC2 /* HTTPClient.swift */; };
+		FB9D4CA027B38B370056ECC2 /* ImageDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C9F27B38B370056ECC2 /* ImageDataMapper.swift */; };
+		FB9D4CA327B38D6B0056ECC2 /* LocalImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CA227B38D6B0056ECC2 /* LocalImageLoader.swift */; };
+		FB9D4CA627B38DE80056ECC2 /* RemoteWithLocalFallBackImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CA527B38DE80056ECC2 /* RemoteWithLocalFallBackImageLoader.swift */; };
+		FB9D4CA827B392180056ECC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CA727B392180056ECC2 /* Constants.swift */; };
+		FB9D4CAB27B3988D0056ECC2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CAA27B3988D0056ECC2 /* Reachability.swift */; };
+		FB9D4CAF27B3C3F90056ECC2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CAE27B3C3F90056ECC2 /* String.swift */; };
+		FB9D4CB127B3C91E0056ECC2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CB027B3C91E0056ECC2 /* UITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +41,17 @@
 		FB9D4C8E27B2FBB70056ECC2 /* SearchImageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchImageViewController.storyboard; sourceTree = "<group>"; };
 		FB9D4C9127B2FC670056ECC2 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		FB9D4C9327B2FC7B0056ECC2 /* ImageDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetailsViewController.storyboard; sourceTree = "<group>"; };
+		FB9D4C9727B305C50056ECC2 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FB9D4C9927B305F20056ECC2 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		FB9D4C9B27B38A770056ECC2 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
+		FB9D4C9D27B38AAB0056ECC2 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		FB9D4C9F27B38B370056ECC2 /* ImageDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataMapper.swift; sourceTree = "<group>"; };
+		FB9D4CA227B38D6B0056ECC2 /* LocalImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageLoader.swift; sourceTree = "<group>"; };
+		FB9D4CA527B38DE80056ECC2 /* RemoteWithLocalFallBackImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWithLocalFallBackImageLoader.swift; sourceTree = "<group>"; };
+		FB9D4CA727B392180056ECC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FB9D4CAA27B3988D0056ECC2 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		FB9D4CAE27B3C3F90056ECC2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FB9D4CB027B3C91E0056ECC2 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +84,13 @@
 		FB9D4C6D27B2E44B0056ECC2 /* APOD */ = {
 			isa = PBXGroup;
 			children = (
+				FB9D4CA427B38DC50056ECC2 /* Composer */,
+				FB9D4CA127B38D470056ECC2 /* Persistence */,
+				FB9D4C9627B3056A0056ECC2 /* API */,
+				FB9D4C9527B3055E0056ECC2 /* Feature */,
 				FB9D4C8827B2E4C10056ECC2 /* UI */,
 				FB9D4C8527B2E4630056ECC2 /* Main */,
+				FB9D4CA927B398790056ECC2 /* Helpers */,
 				FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */,
 				FB9D4C7C27B2E4530056ECC2 /* LaunchScreen.storyboard */,
 				FB9D4C7F27B2E4530056ECC2 /* Info.plist */,
@@ -76,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */,
-				FB9D4C8627B2E4AD0056ECC2 /* APODCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -106,6 +132,61 @@
 				FB9D4C9327B2FC7B0056ECC2 /* ImageDetailsViewController.storyboard */,
 			);
 			path = ImageDetails;
+			sourceTree = "<group>";
+		};
+		FB9D4C9527B3055E0056ECC2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D4C9727B305C50056ECC2 /* Image.swift */,
+				FB9D4C9927B305F20056ECC2 /* ImageLoader.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		FB9D4C9627B3056A0056ECC2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D4C9B27B38A770056ECC2 /* RemoteImageLoader.swift */,
+				FB9D4C9D27B38AAB0056ECC2 /* HTTPClient.swift */,
+				FB9D4C9F27B38B370056ECC2 /* ImageDataMapper.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FB9D4CA127B38D470056ECC2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D4CA227B38D6B0056ECC2 /* LocalImageLoader.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		FB9D4CA427B38DC50056ECC2 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D4C8627B2E4AD0056ECC2 /* APODCoordinator.swift */,
+				FB9D4CA527B38DE80056ECC2 /* RemoteWithLocalFallBackImageLoader.swift */,
+			);
+			path = Composer;
+			sourceTree = "<group>";
+		};
+		FB9D4CA927B398790056ECC2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D4CA727B392180056ECC2 /* Constants.swift */,
+				FB9D4CAA27B3988D0056ECC2 /* Reachability.swift */,
+				FB9D4CB227B3C92A0056ECC2 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FB9D4CB227B3C92A0056ECC2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D4CAE27B3C3F90056ECC2 /* String.swift */,
+				FB9D4CB027B3C91E0056ECC2 /* UITextField.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +261,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9D4CAF27B3C3F90056ECC2 /* String.swift in Sources */,
+				FB9D4CAB27B3988D0056ECC2 /* Reachability.swift in Sources */,
+				FB9D4C9C27B38A770056ECC2 /* RemoteImageLoader.swift in Sources */,
+				FB9D4C9A27B305F20056ECC2 /* ImageLoader.swift in Sources */,
 				FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */,
+				FB9D4C9827B305C50056ECC2 /* Image.swift in Sources */,
+				FB9D4CA027B38B370056ECC2 /* ImageDataMapper.swift in Sources */,
 				FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */,
+				FB9D4C9E27B38AAB0056ECC2 /* HTTPClient.swift in Sources */,
+				FB9D4CA827B392180056ECC2 /* Constants.swift in Sources */,
+				FB9D4CA327B38D6B0056ECC2 /* LocalImageLoader.swift in Sources */,
+				FB9D4CA627B38DE80056ECC2 /* RemoteWithLocalFallBackImageLoader.swift in Sources */,
 				FB9D4C8A27B2E5020056ECC2 /* SearchImageViewController.swift in Sources */,
 				FB9D4C8727B2E4AD0056ECC2 /* APODCoordinator.swift in Sources */,
 				FB9D4C9227B2FC670056ECC2 /* ImageDetailsViewController.swift in Sources */,
+				FB9D4CB127B3C91E0056ECC2 /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
