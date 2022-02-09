@@ -43,7 +43,7 @@ class SearchImageViewController: UIViewController {
         dateTextField.text = ""
     }
     @IBAction func displayListOfFavourites() {
-        
+        navigationDelegate?.displayListOfFavourites()
     }
     // MARK: - Date Picker Events
     

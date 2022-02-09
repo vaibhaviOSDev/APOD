@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB69E66627B42933003A0980 /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E66427B42933003A0980 /* FavouritesTableViewCell.swift */; };
+		FB69E66727B42933003A0980 /* FavouritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB69E66527B42933003A0980 /* FavouritesTableViewCell.xib */; };
+		FB69E66927B43111003A0980 /* FavouritesListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB69E66827B43111003A0980 /* FavouritesListViewController.storyboard */; };
 		FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */; };
 		FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C7727B2E44B0056ECC2 /* APOD.xcdatamodeld */; };
 		FB9D4C7B27B2E4530056ECC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */; };
@@ -27,9 +30,13 @@
 		FB9D4CAB27B3988D0056ECC2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CAA27B3988D0056ECC2 /* Reachability.swift */; };
 		FB9D4CAF27B3C3F90056ECC2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CAE27B3C3F90056ECC2 /* String.swift */; };
 		FB9D4CB127B3C91E0056ECC2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CB027B3C91E0056ECC2 /* UITextField.swift */; };
+		FB9D4CB727B428990056ECC2 /* FavouritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4CB627B428990056ECC2 /* FavouritesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB69E66427B42933003A0980 /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
+		FB69E66527B42933003A0980 /* FavouritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesTableViewCell.xib; sourceTree = "<group>"; };
+		FB69E66827B43111003A0980 /* FavouritesListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesListViewController.storyboard; sourceTree = "<group>"; };
 		FB9D4C6B27B2E44B0056ECC2 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB9D4C7827B2E44B0056ECC2 /* APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APOD.xcdatamodel; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 		FB9D4CAA27B3988D0056ECC2 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FB9D4CAE27B3C3F90056ECC2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FB9D4CB027B3C91E0056ECC2 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		FB9D4CB627B428990056ECC2 /* FavouritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 		FB9D4C8827B2E4C10056ECC2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FB9D4CB527B428410056ECC2 /* Favourites */,
 				FB9D4C9027B2FC4A0056ECC2 /* ImageDetails */,
 				FB9D4C8B27B2E5110056ECC2 /* Search */,
 			);
@@ -189,6 +198,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FB9D4CB527B428410056ECC2 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				FB9D4CB627B428990056ECC2 /* FavouritesListViewController.swift */,
+				FB69E66427B42933003A0980 /* FavouritesTableViewCell.swift */,
+				FB69E66527B42933003A0980 /* FavouritesTableViewCell.xib */,
+				FB69E66827B43111003A0980 /* FavouritesListViewController.storyboard */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,10 +267,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB69E66727B42933003A0980 /* FavouritesTableViewCell.xib in Resources */,
 				FB9D4C7E27B2E4530056ECC2 /* LaunchScreen.storyboard in Resources */,
 				FB9D4C7B27B2E4530056ECC2 /* Assets.xcassets in Resources */,
 				FB9D4C9427B2FC7B0056ECC2 /* ImageDetailsViewController.storyboard in Resources */,
 				FB9D4C8F27B2FBB70056ECC2 /* SearchImageViewController.storyboard in Resources */,
+				FB69E66927B43111003A0980 /* FavouritesListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +290,9 @@
 				FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */,
 				FB9D4C9827B305C50056ECC2 /* Image.swift in Sources */,
 				FB9D4CA027B38B370056ECC2 /* ImageDataMapper.swift in Sources */,
+				FB69E66627B42933003A0980 /* FavouritesTableViewCell.swift in Sources */,
 				FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */,
+				FB9D4CB727B428990056ECC2 /* FavouritesListViewController.swift in Sources */,
 				FB9D4C9E27B38AAB0056ECC2 /* HTTPClient.swift in Sources */,
 				FB9D4CA827B392180056ECC2 /* Constants.swift in Sources */,
 				FB9D4CA327B38D6B0056ECC2 /* LocalImageLoader.swift in Sources */,

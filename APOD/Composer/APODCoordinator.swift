@@ -11,11 +11,15 @@ import UIKit
 /// Protocol for presenting the Image Detail View when the user clicks on Search
 protocol PresentImageDetailViewDelegate: AnyObject {
     func presentImageDetailsViewController(date: String)
+    func displayListOfFavourites()
 }
 /// Protocol for dismissing the Image Detail View when the user clicks on Cancel button
 protocol DismissImageDetailViewDelegate: AnyObject {
     func dismissImageDetailView()
     func showAlertMessage(title: String, message: String)
+}
+protocol DisplayFavouritesListDelegate: AnyObject {
+    func displayListOfFavourites()
 }
 
 class APODCoordinator {
@@ -26,14 +30,21 @@ class APODCoordinator {
 
     /// Search View Controller where a user selects a date of his choice & search the image of that day
     lazy var searchImageViewController: SearchImageViewController? = {
-        guard let searchImageViewController = UIStoryboard(name: Constants.SearchImageViewID, bundle: nil).instantiateViewController(withIdentifier: Constants.SearchImageViewID) as? SearchImageViewController else { return nil }
+        guard let searchImageViewController = UIStoryboard(name: Constants.SearchImageViewNibName, bundle: nil).instantiateViewController(withIdentifier: Constants.SearchImageViewNibName) as? SearchImageViewController else { return nil }
         searchImageViewController.navigationDelegate = self
         return searchImageViewController
     }()
     
     /// Image Details View Controller where a user is displayed the details of the retrieved image
     private var imageDetailsViewController: ImageDetailsViewController?
+    
+    /// Will display list of favourites
+    private var favouritesListViewController: FavouritesListViewController? = {
+        guard let favouritesListViewController = UIStoryboard(name: Constants.FavouritesListViewNibName, bundle: nil).instantiateViewController(withIdentifier: Constants.FavouritesListViewNibName) as? FavouritesListViewController else { return nil }
+        return favouritesListViewController
+    }()
 
+    /// Class which composes API and Persistence
     private var remoteWithLocalFallBackImageLoader: RemoteWithLocalFallBackImageLoader?
     
     // MARK: Init
@@ -66,7 +77,7 @@ extension APODCoordinator: PresentImageDetailViewDelegate {
     func presentImageDetailsViewController(date: String) {
         
         if imageDetailsViewController == nil {
-            imageDetailsViewController = UIStoryboard(name: Constants.ImageDetailsViewID, bundle: nil).instantiateViewController(withIdentifier: Constants.ImageDetailsViewID) as? ImageDetailsViewController
+            imageDetailsViewController = UIStoryboard(name: Constants.ImageDetailsViewNibName, bundle: nil).instantiateViewController(withIdentifier: Constants.ImageDetailsViewNibName) as? ImageDetailsViewController
         }
         guard let imageDetailsViewController = imageDetailsViewController,
               let navigationController = navigationController,
@@ -77,7 +88,14 @@ extension APODCoordinator: PresentImageDetailViewDelegate {
         imageDetailsViewController.dissmissImageDetailViewDelegate = self
         navigationController.present(imageDetailsViewController, animated: true, completion: nil)
     }
-    
+    func displayListOfFavourites() {
+        guard let favouritesListViewController = favouritesListViewController,
+              let imageList = favouritesListViewController.imageLists,
+              !imageList.isEmpty else {
+                  showAlertMessage(title: Constants.No_Favourites, message: Constants.No_Favourites_Message)
+            return
+        }
+    }
 }
 
 extension APODCoordinator: DismissImageDetailViewDelegate {
