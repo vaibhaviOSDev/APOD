@@ -8,7 +8,6 @@
 import Foundation
 
 public final class RemoteWithLocalFallBackImageLoader {
-    public typealias Result = ImageLoaderResult
 
     private let remoteImageLoader: RemoteImageLoader
     private let localImageLoader: LocalImageLoader
@@ -18,11 +17,19 @@ public final class RemoteWithLocalFallBackImageLoader {
         self.localImageLoader = localImageLoader
     }
 }
-extension RemoteWithLocalFallBackImageLoader: ImageLoader {
+extension RemoteWithLocalFallBackImageLoader: ImageDetailsLoader {
     
-    public func load(completion: @escaping (Result) -> Void) {
+    public func load(completion: @escaping (ImageDetailsLoaderResult) -> Void) {
         
         let result = Reachability.isConnectedToNetwork() ? remoteImageLoader.load : localImageLoader.load
+        result(completion)
+    }
+}
+extension RemoteWithLocalFallBackImageLoader: ImageLoader {
+    
+    public func loadImage(completion: @escaping (ImageLoaderResult) -> Void) {
+        
+        let result = Reachability.isConnectedToNetwork() ? remoteImageLoader.loadImage : localImageLoader.loadImage
         result(completion)
     }
 }

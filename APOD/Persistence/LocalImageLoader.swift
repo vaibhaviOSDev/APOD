@@ -9,12 +9,14 @@ import Foundation
 
 public final class LocalImageLoader {
     
-    public typealias Result = ImageLoaderResult
-
+}
+extension LocalImageLoader: ImageDetailsLoader {
+    public func load(completion: @escaping (ImageDetailsLoaderResult) -> Void) {
+        
+    }
 }
 extension LocalImageLoader: ImageLoader {
-    
-    public func load(completion: @escaping (Result) -> Void) {
+    public func loadImage(completion: @escaping (ImageLoaderResult) -> Void) {
         
     }
 }

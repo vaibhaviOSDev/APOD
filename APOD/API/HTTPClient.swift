@@ -11,14 +11,19 @@ public enum HTTPClientResult {
     case success(Data, HTTPURLResponse)
     case failure(Error)
 }
-
+public enum HTTPClientFetchImageResult {
+    case success(URL)
+    case failure(Error)
+}
 public protocol HTTPClient {
-    func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void )
+    func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void)
+    func fetchImageFromServer(from url: URL, completion: @escaping (HTTPClientFetchImageResult) -> Void)
 }
 
 extension URLSession: HTTPClient {
-  public func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void ) {
-        
+    
+    public func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void ) {
+            
         dataTask(with: url) { data, response, error in
             if let data = data,
                let response = response as? HTTPURLResponse {
@@ -27,6 +32,18 @@ extension URLSession: HTTPClient {
                 if let error = error {
                     completion(.failure(error))
                 }
+            }
+        }.resume()
+    }
+    public func fetchImageFromServer(from url: URL, completion: @escaping (HTTPClientFetchImageResult) -> Void) {
+        
+        downloadTask(with: url) { localURL, response, error in
+            if let localURL = localURL {
+                completion(.success(localURL))
+            } else {
+               if let error = error {
+                completion(.failure(error))
+               }
             }
         }.resume()
     }

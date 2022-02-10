@@ -17,7 +17,10 @@ extension APODCoordinator: DisplayFavouriteDelegate {
             imageDetailsViewController = UIStoryboard(name: Constants.ImageDetailsViewNibName, bundle: nil).instantiateViewController(withIdentifier: Constants.ImageDetailsViewNibName) as? ImageDetailsViewController
         }
         guard let imageDetailsViewController = imageDetailsViewController else { return }
+        let remoteWithLocalFallBackImageLoader = APODFactory.getRemoteWithLocalFallbackImageLoader(url: imageViewModel.imageInfo.imageURL)
+        
         imageDetailsViewController.imageViewModel = imageViewModel
+        imageDetailsViewController.imageLoader = remoteWithLocalFallBackImageLoader
         imageDetailsViewController.imageDetailViewDelegate = self
         navigationController?.present(imageDetailsViewController, animated: true, completion: nil)
     }

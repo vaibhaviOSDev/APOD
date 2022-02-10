@@ -29,11 +29,21 @@ internal final class ImageDataMapper {
     private static var status_OK: Int {
         return 200
     }
-    internal static func map(_ data: Data, _ response: HTTPURLResponse) -> RemoteImageLoader.Result {
+    static var imageURL: URL?
+    
+    internal static func map(_ data: Data, _ response: HTTPURLResponse) -> ImageDetailsLoaderResult {
         guard response.statusCode == ImageDataMapper.status_OK,
            let imageDetail = try? JSONDecoder().decode(ImageDetails.self, from: data) else {
                return .failure(RemoteImageLoader.Error.invalidData)
          }
+        ImageDataMapper.imageURL = imageDetail.image.imageURL
         return .success(imageDetail.image)
+    }
+    internal static func mapImageLocalURL(localURL: URL) -> Data? {
+
+        guard let imageData = try? Data(contentsOf: localURL) else {
+            return nil
+        }
+        return imageData
     }
 }

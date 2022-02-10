@@ -26,7 +26,10 @@ final class ImageDetailsViewController: UIViewController {
 
     // MARK: Properties
     
-    /// Image Loader Inteface Type
+    /// Image Details Loader Inteface Type
+    var imageDetailsLoader: ImageDetailsLoader?
+    
+    /// Image  Loader Inteface Type
     var imageLoader: ImageLoader?
     
     ///  Navigation delegates
@@ -56,12 +59,15 @@ final class ImageDetailsViewController: UIViewController {
 
     /// Mark Image As Favourite
     @IBAction func markAsFavourite() {
+        
         guard var imageViewModel = imageViewModel else { return }
+        
         imageViewModel.isFavourite = !imageViewModel.isFavourite
         isFavourite = imageViewModel.isFavourite
         if let favouriteIcon = favouriteIcon {
             favouriteButton.setBackgroundImage(favouriteIcon, for: UIControl.State.normal)
         }
+        
         imageDetailViewDelegate?.manageFavourite(imageViewModel: imageViewModel)
     }
     /// Dismiss the Detail View
@@ -75,33 +81,42 @@ final class ImageDetailsViewController: UIViewController {
         imageDetailsViewLoadingHandler()
     }
     private func imageDetailsViewLoadingHandler() {
+        
         guard imageViewModel == nil else { return }
+        
         startActivityIndicator()
-        imageLoader?.load { [weak self] result in
+        
+        imageDetailsLoader?.load { [weak self] result in
+            
             switch result {
-            case let .success(imageData):
-                self?.imageViewModel = ImageViewModel(imageInfo: imageData, isFavourite: false)
-            case .failure:
-                self?.displayAlert()
+                
+            case let .success(imageDetails):
+                self?.imageViewModel = ImageViewModel(imageInfo: imageDetails, isFavourite: false)
+                
+            case let .failure(error):
+                self?.displayAlert(description: error.localizedDescription)
             }
         }
     }
     // MARK: - Helpers
     
     /// When the error occurs the alert View is displayed
-    private func displayAlert() {
+    private func displayAlert(description: String) {
         DispatchQueue.main.async { [weak self] in
             self?.activityView.stopAnimating()
         }
-        imageDetailViewDelegate?.showAlertMessage(title: Constants.Error, message: Constants.Error_Description)
+        imageDetailViewDelegate?.showAlertMessage(title: Constants.Error, message: description)
     }
     private func setPresentableDataToUIElements() {
+        
         startActivityIndicator()
+        
         guard let imageViewModel = imageViewModel else {
             stopActivityIndicator()
             return
         }
         isFavourite = imageViewModel.isFavourite
+        
         DispatchQueue.main.async { [weak self] in
             self?.imageTitle.text = imageViewModel.imageInfo.title
             self?.dateLabel.text = imageViewModel.imageInfo.date
@@ -116,16 +131,28 @@ final class ImageDetailsViewController: UIViewController {
     private func loadImage() {
         
         guard let imageViewModel = imageViewModel,
-              imageViewModel.imageInfo.imageURL.absoluteString.isImage() else { return }
+              imageViewModel.imageInfo.imageURL.absoluteString.isImage() else {
+            stopActivityIndicator()
+            return
+        }
         startActivityIndicator()
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            
-            guard let imageData = try? Data(contentsOf: imageViewModel.imageInfo.imageURL),
-                  let image = UIImage(data: imageData) else { return }
-            DispatchQueue.main.async { [weak self ] in
-                self?.imageView.image = image
-                self?.stopActivityIndicator()
-            }
+        
+        imageLoader?.loadImage { [weak self] result in
+          
+           switch result {
+               
+           case let .success(imageData):
+               self?.setImageWithData(data: imageData)
+               
+           case let .failure(error):
+               self?.displayAlert(description: error.localizedDescription)
+           }
+        }
+    }
+    private func setImageWithData(data: Data) {
+        DispatchQueue.main.async { [weak self ] in
+            self?.imageView.image = UIImage(data: data)
+            self?.stopActivityIndicator()
         }
     }
     private func startActivityIndicator() {

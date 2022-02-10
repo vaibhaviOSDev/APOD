@@ -2,15 +2,15 @@
 //  ImageLoader.swift
 //  APOD
 //
-//  Created by Vaibhav Srivastava on 9.2.2022.
+//  Created by Vaibhav Srivastava on 10.2.2022.
 //
 
 import Foundation
 
 public enum ImageLoaderResult {
-    case success(Image)
+    case success(Data)
     case failure(Error)
 }
 public protocol ImageLoader {
-    func load(completion: @escaping (ImageLoaderResult) -> Void)
+    func loadImage(completion: @escaping (ImageLoaderResult) -> Void)
 }
