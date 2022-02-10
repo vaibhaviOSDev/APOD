@@ -1,31 +1,29 @@
 # APOD (Astronomy Pic of the Day)
-PlacesTestApp is an iOS application which can open a requested location in the iOS Wikipedia app’s Places tab in short it launches a third party application’s specific page or feature 
+It is an iOS application which displays the details of the NASA's Astronomy Pic of the Day. 
 
-
-  - Opens a location in map by selecting any location mentioned in the listing
-  - Prompt user for entering custom coordinates & opening the same
-
-
+  - Opens a view where user can enter the date of his/her choice & can perform search for the APOD.
+  - Image can be marked as favourite which the user can again view in the Favourites list.
+  - When the user is offline the most recent cached image is displayed.
 
 ### Tech
 
-APOD (Astronomy Pic of the Day) has been developed using Apple's Swift programming language & XCode as an Integrated Development Environment
+APOD (Astronomy Pic of the Day) has been developed using Apple's Swift programming language & XCode 13 as an Integrated Development Environment
 
 
 ### Prerequisites
-    iOS 14 & above
+    iOS 13 & above
     Xcode 12 & above
-    Swift 5.0 & above
+    Swift 4.0 & above
 
 ### Installation
-
-PlacesTestApp supports iOS 14 & above along with [XCode](https://developer.apple.com/xcode/) to run.
+Whent the XCode is installed & ready the user can clone/download the repository once done he/she can select the iOS simulator of one's choice & run the application
 
 ### Limitations
 
- - Images marked as Favourites have not been persisted locally to Core Data Stack
- - The App will not be able to play videos it only render Images downloaded
+ - Images marked as Favourites have not been saved locally to persistence frameworks.
+ - The App will not be able to play videos it only render Images downloaded.
 
 ### Scope
 
-  - Persisting Images marked as favourites
+  - Persisting Images marked as favourites.
+  - Playing videos 
