@@ -7,6 +7,9 @@
 
 import Foundation
 
+// MARK: - Image Model
+
+/// Independent of all modules
 public struct Image {
     let title: String
     let date: String

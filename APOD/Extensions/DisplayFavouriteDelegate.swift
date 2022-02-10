@@ -7,9 +7,12 @@
 
 import UIKit
 
+// MARK: - DisplayFavouriteDelegate
+
 public protocol DisplayFavouriteDelegate: AnyObject {
     func displayDetailsOfFavourite(imageViewModel: ImageViewModel)
 }
+/// Presents the User the lists of all the Images marked as favourite
 extension APODCoordinator: DisplayFavouriteDelegate {
     public func displayDetailsOfFavourite(imageViewModel: ImageViewModel) {
 

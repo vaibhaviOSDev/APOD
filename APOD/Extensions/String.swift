@@ -7,8 +7,10 @@
 
 import Foundation
 
+// MARK: -Validator
+
+/// Created for checking if the URL is for image or not
 extension String {
-    
     public func isImage() -> Bool {
         let imageFormats = ["jpg", "png", "gif"]
         guard URL(string: self) != nil  else {

@@ -10,14 +10,17 @@ import CoreData
 
 final class CoreDataStack{
     
+    // MARK: - Private Init
     private init(){}
     
+    /// Single point of access
     static let shared = CoreDataStack()
     
     // MARK: - Core Data stack
     
+    /// Context using which the changes are saved to the store Coordinator
     lazy var context = persistentContainer.viewContext
-
+    /// Persistence container which will hold all the objects passed & later will write to the model
     lazy var persistentContainer: NSPersistentContainer = {
 
        let container = NSPersistentContainer(name: "APOD")
@@ -30,8 +33,9 @@ final class CoreDataStack{
        return container
    }()
 
-   // MARK: - Core Data Saving support
-
+   // MARK: - Save
+    
+    /// Without executing this method the changes won't persist.
    func saveContext () {
        let context = persistentContainer.viewContext
        if context.hasChanges {
@@ -44,9 +48,8 @@ final class CoreDataStack{
            }
        }
    }
-    
-    // MARK: - Generic Fetch
-    
+   // MARK: - Execute Fetch
+    /// Fetches all the records of respective entities
     func fetchRequest<T: NSManagedObject>(managedObject: T.Type)-> [T]?{
         
         do {

@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - ImageDetailViewDelegate
+
 /// Protocol for dismissing the Image Detail View when the user clicks on Cancel button
 public protocol ImageDetailViewDelegate: AnyObject, DisplayAlertDelegate {
     func dismissImageDetailView()
@@ -14,12 +16,14 @@ public protocol ImageDetailViewDelegate: AnyObject, DisplayAlertDelegate {
     func persistDataToLoadWhenOffline(imageViewModel: ImageViewModel)
 }
 
+/// Manages all the events for ImageDetailView which is presented to the user when he performs search
 extension APODCoordinator: ImageDetailViewDelegate {
     
     public func dismissImageDetailView() {
         imageDetailsViewController?.dismiss(animated: true, completion: nil)
         imageDetailsViewController = nil
     }
+    /// Manages the logic of maintaining states for the Images marked/ unmarked as favourite
     public func manageFavourite(imageViewModel: ImageViewModel) {
         guard let favouritesListViewController = favouritesListViewController else {
             return

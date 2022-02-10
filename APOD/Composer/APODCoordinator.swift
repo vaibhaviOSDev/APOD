@@ -39,6 +39,7 @@ public final class APODCoordinator {
     public init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    /// Starting of loading the landing page of the app
     func start() {
         guard let searchImageViewController = searchImageViewController,
               let navigationController = navigationController else { return }
@@ -49,6 +50,5 @@ public final class APODCoordinator {
     private func getURLForFetchingTheImageData(date: String) -> URL? {
         return URL(string: "\(Constants.API)api_key=\(Constants.API_KEY)&date=\(date)")
     }
-
 }
 

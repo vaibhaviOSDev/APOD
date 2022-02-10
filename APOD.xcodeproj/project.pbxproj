@@ -20,6 +20,7 @@
 		FB69E68A27B53737003A0980 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E68927B53737003A0980 /* ImageRepository.swift */; };
 		FB69E69327B552D2003A0980 /* ImageInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E69127B552D2003A0980 /* ImageInfo+CoreDataClass.swift */; };
 		FB69E69427B552D2003A0980 /* ImageInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E69227B552D2003A0980 /* ImageInfo+CoreDataProperties.swift */; };
+		FB69E69627B57D7D003A0980 /* URLSession+HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E69527B57D7D003A0980 /* URLSession+HTTPClient.swift */; };
 		FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */; };
 		FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C7727B2E44B0056ECC2 /* APOD.xcdatamodeld */; };
 		FB9D4C7B27B2E4530056ECC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		FB69E68927B53737003A0980 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		FB69E69127B552D2003A0980 /* ImageInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FB69E69227B552D2003A0980 /* ImageInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FB69E69527B57D7D003A0980 /* URLSession+HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+HTTPClient.swift"; sourceTree = "<group>"; };
 		FB9D4C6B27B2E44B0056ECC2 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB9D4C7827B2E44B0056ECC2 /* APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APOD.xcdatamodel; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				FB9D4C9B27B38A770056ECC2 /* RemoteImageLoader.swift */,
 				FB9D4C9D27B38AAB0056ECC2 /* HTTPClient.swift */,
 				FB9D4C9F27B38B370056ECC2 /* ImageDataMapper.swift */,
+				FB69E69527B57D7D003A0980 /* URLSession+HTTPClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				FB9D4CAF27B3C3F90056ECC2 /* String.swift in Sources */,
 				FB9D4CAB27B3988D0056ECC2 /* Reachability.swift in Sources */,
 				FB9D4C9C27B38A770056ECC2 /* RemoteImageLoader.swift in Sources */,
+				FB69E69627B57D7D003A0980 /* URLSession+HTTPClient.swift in Sources */,
 				FB9D4C9A27B305F20056ECC2 /* ImageDetailsLoader.swift in Sources */,
 				FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */,
 				FB9D4C9827B305C50056ECC2 /* Image.swift in Sources */,
@@ -501,8 +505,10 @@
 				INFOPLIST_FILE = APOD/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,7 +518,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -527,8 +533,10 @@
 				INFOPLIST_FILE = APOD/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,7 +546,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

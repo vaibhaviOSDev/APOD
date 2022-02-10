@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - UITextfield with DatePicker
+
 extension UITextField {
     func datePicker<T>(target: T,
                        doneAction: Selector,
@@ -39,7 +41,9 @@ extension UITextField {
                                                     width: screenWidth,
                                                     height: 216))
         datePicker.datePickerMode = datePickerMode
-        datePicker.preferredDatePickerStyle = .inline
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .inline
+        }
         self.inputView = datePicker
         datePicker.maximumDate = Date()
 

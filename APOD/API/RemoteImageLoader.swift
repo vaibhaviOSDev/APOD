@@ -9,20 +9,29 @@ import Foundation
 
 public final class RemoteImageLoader {
     
+    // MARK: - Properties
+    
     private var url: URL
     private let client: HTTPClient
     
+    // MARK: - Errors
+
     public enum Error: Swift.Error {
         case connectivity
         case invalidData
     }
-    public typealias Result = ImageLoaderResult
+    
+    // MARK: - Init
 
     init(url: URL, client: HTTPClient = URLSession.shared) {
         self.url = url
         self.client = client
     }
 }
+
+// MARK: - ImageDetailsLoader Delegate
+/// Fetched the image details using the NASA's API  key and URL
+
 extension RemoteImageLoader: ImageDetailsLoader {
 
     public func load(completion: @escaping (ImageDetailsLoaderResult) -> Void) {
@@ -42,6 +51,9 @@ extension RemoteImageLoader: ImageDetailsLoader {
         }
     }
 }
+// MARK: - ImageLoader Delegate
+
+/// Downloads the image
 extension RemoteImageLoader: ImageLoader {
     
     public func loadImage(completion: @escaping (ImageLoaderResult) -> Void) {
@@ -49,6 +61,7 @@ extension RemoteImageLoader: ImageLoader {
             guard self != nil else { return }
 
             switch result {
+                
             case let .success(localURL):
                 if let imageData = ImageDataMapper.mapImageLocalURL(localURL: localURL) {
                     completion(.success(imageData))

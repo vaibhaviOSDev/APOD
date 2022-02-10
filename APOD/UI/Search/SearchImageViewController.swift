@@ -17,10 +17,10 @@ final class SearchImageViewController: UIViewController {
     @IBOutlet private weak var searchButton: UIButton!
     /// Button for displaying the listing of the Images marked as favourites
     @IBOutlet private weak var displayFavouritesListButton: UIButton!
-
-
+    
     // MARK:  Properties
     
+    /// Handles all the navigation activities
     var navigationDelegate: PresentImageDetailViewDelegate?
     
     // MARK: - Lifecycle
@@ -30,7 +30,7 @@ final class SearchImageViewController: UIViewController {
         view.backgroundColor = .white
         setUpPickerView()
     }
-    // MARK: - IBAction
+    // MARK: - IBActions
     
     @IBAction func searchButtonPressed() {
         guard let navigationDelegate = navigationDelegate,

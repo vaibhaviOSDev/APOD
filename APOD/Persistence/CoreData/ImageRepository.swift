@@ -10,6 +10,9 @@ import CoreData
 
 public struct ImageRepository {
     
+    // MARK: - Insert
+    
+    /// When the Image is loaded from the network it is then stored locally using this method.
     public func createAPODEntity(imageViewModel: ImageViewModel) {
         cleanUpBeforeCreation()
         let context: NSManagedObjectContext = CoreDataStack.shared.context
@@ -22,6 +25,8 @@ public struct ImageRepository {
         imageInfo.imageURL = imageViewModel.imageInfo.imageURL?.absoluteString ?? ""
         CoreDataStack.shared.saveContext()
     }
+    // MARK: - Fetch
+
     public func getImageDetails() -> ImageViewModel? {
         
         var imageViewModels: [ImageViewModel] = [ImageViewModel]()
@@ -34,6 +39,9 @@ public struct ImageRepository {
         }
         return !imageViewModels.isEmpty ? imageViewModels.first : nil 
     }
+    // MARK: - Clean Up
+
+    /// Is executed before every Insert just to ensure the most recent one is displayed to the user
     private func cleanUpBeforeCreation() {
         let managedObjectContext: NSManagedObjectContext = CoreDataStack.shared.context
         let request: NSFetchRequest<ImageInfo> = ImageInfo.fetchRequest()
@@ -47,5 +55,4 @@ public struct ImageRepository {
             debugPrint(error.localizedDescription)
         }
     }
-
 }

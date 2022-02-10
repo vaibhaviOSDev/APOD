@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - DisplayAlertDelegate
+
 public protocol DisplayAlertDelegate {
     func showAlertMessage(title: String, message: String)
 }

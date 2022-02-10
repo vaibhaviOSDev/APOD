@@ -41,6 +41,7 @@ final class ImageDetailsViewController: UIViewController {
             setPresentableDataToUIElements()
         }
     }
+    /// Local variable for deciding the image on the basis of whether the user has marked it as favoruite or not
     private var isFavourite: Bool = false
     
     /// Image Icon Name
@@ -80,6 +81,9 @@ final class ImageDetailsViewController: UIViewController {
         view.addSubview(activityView)
         imageDetailsViewLoadingHandler()
     }
+    // MARK: - Helpers
+    
+    /// Image details are being retrieved either from Network or Persistence layer depending upon the Network reachability
     private func imageDetailsViewLoadingHandler() {
         
         guard imageViewModel == nil else { return }
@@ -98,7 +102,6 @@ final class ImageDetailsViewController: UIViewController {
             }
         }
     }
-    // MARK: - Helpers
     
     /// When the error occurs the alert View is displayed
     private func displayAlert(description: String) {
@@ -107,6 +110,7 @@ final class ImageDetailsViewController: UIViewController {
         }
         imageDetailViewDelegate?.showAlertMessage(title: Constants.Error, message: description)
     }
+    /// Called when the ViewModel is set by other objects
     private func setPresentableDataToUIElements() {
         
         startActivityIndicator()
@@ -150,6 +154,7 @@ final class ImageDetailsViewController: UIViewController {
            }
         }
     }
+    /// Initialises the Image and triggers the event of storing the full image details locally
     private func setImageWithData(data: Data) {
         DispatchQueue.main.async { [weak self ] in
             self?.imageView.image = UIImage(data: data)
@@ -163,6 +168,8 @@ final class ImageDetailsViewController: UIViewController {
             }
         }
     }
+    // MARK: - Activity Handler
+    
     private func startActivityIndicator() {
         DispatchQueue.main.async { [weak self] in
             guard let activityView = self?.activityView,

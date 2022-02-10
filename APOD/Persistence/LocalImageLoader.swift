@@ -7,9 +7,13 @@
 
 import Foundation
 
-public final class LocalImageLoader {
-}
+public final class LocalImageLoader {}
+
+// MARK: - ImageDetailsLoader
+
+/// When user is offline the record which is persisted using the CoreData framework is retrieved & sent as completion
 extension LocalImageLoader: ImageDetailsLoader {
+    
     public func load(completion: @escaping (ImageDetailsLoaderResult) -> Void) {
         let imageRepository = APODFactory.getImageRepository()
         
@@ -21,6 +25,10 @@ extension LocalImageLoader: ImageDetailsLoader {
         }
     }
 }
+
+// MARK: - ImageLoader
+
+/// When user is offline the image data which is persisted using the CoreData framework is retrieved & sent as completion
 extension LocalImageLoader: ImageLoader {
     public func loadImage(completion: @escaping (ImageLoaderResult) -> Void) {
         let imageRepository = APODFactory.getImageRepository()
