@@ -8,9 +8,8 @@
 import UIKit
 
 /// Protocol for dismissing the Image Detail View when the user clicks on Cancel button
-public protocol ImageDetailViewDelegate: AnyObject {
+public protocol ImageDetailViewDelegate: AnyObject, DisplayAlertDelegate {
     func dismissImageDetailView()
-    func showAlertMessage(title: String, message: String)
     func manageFavourite(imageViewModel: ImageViewModel)
 }
 
@@ -19,14 +18,6 @@ extension APODCoordinator: ImageDetailViewDelegate {
     public func dismissImageDetailView() {
         imageDetailsViewController?.dismiss(animated: true, completion: nil)
         imageDetailsViewController = nil
-    }
-    public func showAlertMessage(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default) { [weak self] _  in
-            self?.dismissImageDetailView()
-        }
-        alertController.addAction(alertAction)
-        navigationController?.present(alertController, animated: false, completion: nil)
     }
     public func manageFavourite(imageViewModel: ImageViewModel) {
         guard let favouritesListViewController = favouritesListViewController else {

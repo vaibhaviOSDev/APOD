@@ -13,6 +13,7 @@
 		FB69E66D27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E66C27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift */; };
 		FB69E66F27B4E444003A0980 /* ImageDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E66E27B4E444003A0980 /* ImageDetailViewDelegate.swift */; };
 		FB69E67127B4E479003A0980 /* DisplayFavouriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E67027B4E479003A0980 /* DisplayFavouriteDelegate.swift */; };
+		FB69E67527B50EF1003A0980 /* DisplayAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E67427B50EF1003A0980 /* DisplayAlertDelegate.swift */; };
 		FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */; };
 		FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C7727B2E44B0056ECC2 /* APOD.xcdatamodeld */; };
 		FB9D4C7B27B2E4530056ECC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		FB69E66C27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentImageDetailViewDelegate.swift; sourceTree = "<group>"; };
 		FB69E66E27B4E444003A0980 /* ImageDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewDelegate.swift; sourceTree = "<group>"; };
 		FB69E67027B4E479003A0980 /* DisplayFavouriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFavouriteDelegate.swift; sourceTree = "<group>"; };
+		FB69E67427B50EF1003A0980 /* DisplayAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAlertDelegate.swift; sourceTree = "<group>"; };
 		FB9D4C6B27B2E44B0056ECC2 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB9D4C7827B2E44B0056ECC2 /* APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APOD.xcdatamodel; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				FB69E66C27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift */,
 				FB69E66E27B4E444003A0980 /* ImageDetailViewDelegate.swift */,
 				FB69E67027B4E479003A0980 /* DisplayFavouriteDelegate.swift */,
+				FB69E67427B50EF1003A0980 /* DisplayAlertDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				FB9D4C9E27B38AAB0056ECC2 /* HTTPClient.swift in Sources */,
 				FB9D4CA827B392180056ECC2 /* Constants.swift in Sources */,
 				FB9D4CA327B38D6B0056ECC2 /* LocalImageLoader.swift in Sources */,
+				FB69E67527B50EF1003A0980 /* DisplayAlertDelegate.swift in Sources */,
 				FB9D4CA627B38DE80056ECC2 /* RemoteWithLocalFallBackImageLoader.swift in Sources */,
 				FB9D4C8A27B2E5020056ECC2 /* SearchImageViewController.swift in Sources */,
 				FB9D4C8727B2E4AD0056ECC2 /* APODCoordinator.swift in Sources */,

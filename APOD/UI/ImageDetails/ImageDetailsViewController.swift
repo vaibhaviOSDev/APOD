@@ -101,6 +101,7 @@ final class ImageDetailsViewController: UIViewController {
             stopActivityIndicator()
             return
         }
+        isFavourite = imageViewModel.isFavourite
         DispatchQueue.main.async { [weak self] in
             self?.imageTitle.text = imageViewModel.imageInfo.title
             self?.dateLabel.text = imageViewModel.imageInfo.date
