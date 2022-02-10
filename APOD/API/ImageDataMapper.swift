@@ -11,10 +11,10 @@ internal final class ImageDataMapper {
  
     struct ImageDetails: Decodable {
         
-        private let title: String
-        private let date: String
-        private let url: URL
-        private let explanation: String
+         let title: String
+         let date: String
+         let url: URL
+         let explanation: String
         
         enum CodingKeys: String, CodingKey {
             case title
@@ -37,7 +37,17 @@ internal final class ImageDataMapper {
                return .failure(RemoteImageLoader.Error.invalidData)
          }
         ImageDataMapper.imageURL = imageDetail.image.imageURL
-        return .success(imageDetail.image)
+        
+        let imageViewModel = ImageViewModel(
+            imageInfo: Image(
+                title: imageDetail.title,
+                date: imageDetail.date,
+                imageURL: imageDetail.url,
+                description: imageDetail.explanation),
+            isFavourite: false,
+            imageData: nil)
+        
+        return .success(imageViewModel)
     }
     internal static func mapImageLocalURL(localURL: URL) -> Data? {
 

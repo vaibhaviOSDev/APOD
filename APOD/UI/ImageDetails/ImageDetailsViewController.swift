@@ -90,8 +90,8 @@ final class ImageDetailsViewController: UIViewController {
             
             switch result {
                 
-            case let .success(imageDetails):
-                self?.imageViewModel = ImageViewModel(imageInfo: imageDetails, isFavourite: false)
+            case let .success(imageViewModel):
+                self?.imageViewModel = imageViewModel
                 
             case let .failure(error):
                 self?.displayAlert(description: error.localizedDescription)
@@ -131,7 +131,8 @@ final class ImageDetailsViewController: UIViewController {
     private func loadImage() {
         
         guard let imageViewModel = imageViewModel,
-              imageViewModel.imageInfo.imageURL.absoluteString.isImage() else {
+              let imageURL = imageViewModel.imageInfo.imageURL,
+              imageURL.absoluteString.isImage() else {
             stopActivityIndicator()
             return
         }
@@ -153,6 +154,13 @@ final class ImageDetailsViewController: UIViewController {
         DispatchQueue.main.async { [weak self ] in
             self?.imageView.image = UIImage(data: data)
             self?.stopActivityIndicator()
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                guard var imageViewModel = self?.imageViewModel else {
+                    return
+                }
+                imageViewModel.imageData = data
+                self?.imageDetailViewDelegate?.persistDataToLoadWhenOffline(imageViewModel: imageViewModel)
+            }
         }
     }
     private func startActivityIndicator() {

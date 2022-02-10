@@ -11,6 +11,7 @@ import UIKit
 public protocol ImageDetailViewDelegate: AnyObject, DisplayAlertDelegate {
     func dismissImageDetailView()
     func manageFavourite(imageViewModel: ImageViewModel)
+    func persistDataToLoadWhenOffline(imageViewModel: ImageViewModel)
 }
 
 extension APODCoordinator: ImageDetailViewDelegate {
@@ -41,5 +42,9 @@ extension APODCoordinator: ImageDetailViewDelegate {
             guard imageAlreadyMarkedAsFavourite else { return }
             favouritesListViewController.imageLists.remove(at: indexOfFoundElement)
         }
+    }
+    public func persistDataToLoadWhenOffline(imageViewModel: ImageViewModel) {
+        let imageRepository = APODFactory.getImageRepository()
+        imageRepository.createAPODEntity(imageViewModel: imageViewModel)
     }
 }

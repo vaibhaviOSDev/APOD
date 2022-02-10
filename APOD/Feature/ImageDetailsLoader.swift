@@ -8,7 +8,7 @@
 import Foundation
 
 public enum ImageDetailsLoaderResult {
-    case success(Image)
+    case success(ImageViewModel)
     case failure(Error)
 }
 public protocol ImageDetailsLoader {

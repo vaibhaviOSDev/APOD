@@ -10,6 +10,6 @@ import Foundation
 public struct Image {
     let title: String
     let date: String
-    let imageURL: URL
+    let imageURL: URL?
     let description: String
 }

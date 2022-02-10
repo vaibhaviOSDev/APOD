@@ -18,4 +18,9 @@ public final class APODFactory {
         
         return remoteWithLocalFallBackImageLoader
     }
+    /// For Persisting Image which will be loaded when the user is offline
+    public static func getImageRepository() -> ImageRepository {
+       let imageRepository = ImageRepository()
+        return imageRepository
+    }
 }

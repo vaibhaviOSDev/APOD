@@ -16,6 +16,10 @@
 		FB69E67527B50EF1003A0980 /* DisplayAlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E67427B50EF1003A0980 /* DisplayAlertDelegate.swift */; };
 		FB69E67727B51827003A0980 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E67627B51827003A0980 /* ImageLoader.swift */; };
 		FB69E67927B526AF003A0980 /* APODFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E67827B526AF003A0980 /* APODFactory.swift */; };
+		FB69E68827B53683003A0980 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E68727B53683003A0980 /* CoreDataStack.swift */; };
+		FB69E68A27B53737003A0980 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E68927B53737003A0980 /* ImageRepository.swift */; };
+		FB69E69327B552D2003A0980 /* ImageInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E69127B552D2003A0980 /* ImageInfo+CoreDataClass.swift */; };
+		FB69E69427B552D2003A0980 /* ImageInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E69227B552D2003A0980 /* ImageInfo+CoreDataProperties.swift */; };
 		FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */; };
 		FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C7727B2E44B0056ECC2 /* APOD.xcdatamodeld */; };
 		FB9D4C7B27B2E4530056ECC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */; };
@@ -49,6 +53,10 @@
 		FB69E67427B50EF1003A0980 /* DisplayAlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAlertDelegate.swift; sourceTree = "<group>"; };
 		FB69E67627B51827003A0980 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FB69E67827B526AF003A0980 /* APODFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODFactory.swift; sourceTree = "<group>"; };
+		FB69E68727B53683003A0980 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FB69E68927B53737003A0980 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		FB69E69127B552D2003A0980 /* ImageInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FB69E69227B552D2003A0980 /* ImageInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FB9D4C6B27B2E44B0056ECC2 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB9D4C7827B2E44B0056ECC2 /* APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APOD.xcdatamodel; sourceTree = "<group>"; };
@@ -85,6 +93,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB69E68B27B5383A003A0980 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB69E66A27B4567F003A0980 /* ImageViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB69E69027B539F3003A0980 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FB69E69127B552D2003A0980 /* ImageInfo+CoreDataClass.swift */,
+				FB69E69227B552D2003A0980 /* ImageInfo+CoreDataProperties.swift */,
+				FB69E68727B53683003A0980 /* CoreDataStack.swift */,
+				FB69E68927B53737003A0980 /* ImageRepository.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		FB9D4C6227B2E44B0056ECC2 = {
 			isa = PBXGroup;
 			children = (
@@ -104,12 +131,13 @@
 		FB9D4C6D27B2E44B0056ECC2 /* APOD */ = {
 			isa = PBXGroup;
 			children = (
+				FB9D4C8527B2E4630056ECC2 /* Main */,
 				FB9D4CA427B38DC50056ECC2 /* Composer */,
 				FB9D4CA127B38D470056ECC2 /* Persistence */,
 				FB9D4C9627B3056A0056ECC2 /* API */,
 				FB9D4C9527B3055E0056ECC2 /* Feature */,
 				FB9D4C8827B2E4C10056ECC2 /* UI */,
-				FB9D4C8527B2E4630056ECC2 /* Main */,
+				FB69E68B27B5383A003A0980 /* Model */,
 				FB9D4CB227B3C92A0056ECC2 /* Extensions */,
 				FB9D4CA927B398790056ECC2 /* Helpers */,
 				FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */,
@@ -180,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				FB9D4CA227B38D6B0056ECC2 /* LocalImageLoader.swift */,
+				FB69E69027B539F3003A0980 /* CoreData */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -196,6 +225,7 @@
 		FB9D4CA927B398790056ECC2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FB69E67827B526AF003A0980 /* APODFactory.swift */,
 				FB9D4CA727B392180056ECC2 /* Constants.swift */,
 				FB9D4CAA27B3988D0056ECC2 /* Reachability.swift */,
 			);
@@ -211,7 +241,6 @@
 				FB69E66E27B4E444003A0980 /* ImageDetailViewDelegate.swift */,
 				FB69E67027B4E479003A0980 /* DisplayFavouriteDelegate.swift */,
 				FB69E67427B50EF1003A0980 /* DisplayAlertDelegate.swift */,
-				FB69E67827B526AF003A0980 /* APODFactory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,7 +251,6 @@
 				FB9D4CB627B428990056ECC2 /* FavouritesListViewController.swift */,
 				FB69E66427B42933003A0980 /* FavouritesTableViewCell.swift */,
 				FB69E66527B42933003A0980 /* FavouritesTableViewCell.xib */,
-				FB69E66A27B4567F003A0980 /* ImageViewModel.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -316,13 +344,17 @@
 				FB9D4CA327B38D6B0056ECC2 /* LocalImageLoader.swift in Sources */,
 				FB69E67727B51827003A0980 /* ImageLoader.swift in Sources */,
 				FB69E67527B50EF1003A0980 /* DisplayAlertDelegate.swift in Sources */,
+				FB69E68A27B53737003A0980 /* ImageRepository.swift in Sources */,
 				FB9D4CA627B38DE80056ECC2 /* RemoteWithLocalFallBackImageLoader.swift in Sources */,
 				FB9D4C8A27B2E5020056ECC2 /* SearchImageViewController.swift in Sources */,
 				FB9D4C8727B2E4AD0056ECC2 /* APODCoordinator.swift in Sources */,
+				FB69E68827B53683003A0980 /* CoreDataStack.swift in Sources */,
 				FB9D4C9227B2FC670056ECC2 /* ImageDetailsViewController.swift in Sources */,
 				FB69E67927B526AF003A0980 /* APODFactory.swift in Sources */,
+				FB69E69327B552D2003A0980 /* ImageInfo+CoreDataClass.swift in Sources */,
 				FB69E66B27B4567F003A0980 /* ImageViewModel.swift in Sources */,
 				FB9D4CB127B3C91E0056ECC2 /* UITextField.swift in Sources */,
+				FB69E69427B552D2003A0980 /* ImageInfo+CoreDataProperties.swift in Sources */,
 				FB69E66D27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift in Sources */,
 				FB69E67127B4E479003A0980 /* DisplayFavouriteDelegate.swift in Sources */,
 			);

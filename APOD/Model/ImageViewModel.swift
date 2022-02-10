@@ -10,4 +10,5 @@ import Foundation
 public struct ImageViewModel {
     let imageInfo: Image
     var isFavourite: Bool
+    var imageData: Data? 
 }

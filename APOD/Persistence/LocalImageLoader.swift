@@ -8,15 +8,29 @@
 import Foundation
 
 public final class LocalImageLoader {
-    
 }
 extension LocalImageLoader: ImageDetailsLoader {
     public func load(completion: @escaping (ImageDetailsLoaderResult) -> Void) {
+        let imageRepository = APODFactory.getImageRepository()
         
+        if let imageViewModel = imageRepository.getImageDetails() {
+            completion(.success(imageViewModel))
+        } else {
+            let error = NSError(domain: "No Records Found", code: 0)
+            completion(.failure(error))
+        }
     }
 }
 extension LocalImageLoader: ImageLoader {
     public func loadImage(completion: @escaping (ImageLoaderResult) -> Void) {
+        let imageRepository = APODFactory.getImageRepository()
         
+        if let imageViewModel = imageRepository.getImageDetails(),
+           let data = imageViewModel.imageData {
+            completion(.success(data))
+        } else {
+            let error = NSError(domain: "No Records Found", code: 0)
+            completion(.failure(error))
+        }
     }
 }

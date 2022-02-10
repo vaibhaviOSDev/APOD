@@ -49,14 +49,6 @@ public final class APODCoordinator {
     private func getURLForFetchingTheImageData(date: String) -> URL? {
         return URL(string: "\(Constants.API)api_key=\(Constants.API_KEY)&date=\(date)")
     }
-    private func getRemoteWithLocalFallbackImageLoader(url: URL) -> RemoteWithLocalFallBackImageLoader {
-        let remoteImageLoader = RemoteImageLoader(url: url)
-        let localImageLoader = LocalImageLoader()
-        let remoteWithLocalFallBackImageLoader = RemoteWithLocalFallBackImageLoader(
-            remoteImageLoader: remoteImageLoader,
-            localImageLoader: localImageLoader)
-        
-        return remoteWithLocalFallBackImageLoader
-    }
+
 }
 
