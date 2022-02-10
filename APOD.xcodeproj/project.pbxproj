@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		FB69E66627B42933003A0980 /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E66427B42933003A0980 /* FavouritesTableViewCell.swift */; };
 		FB69E66727B42933003A0980 /* FavouritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB69E66527B42933003A0980 /* FavouritesTableViewCell.xib */; };
-		FB69E66927B43111003A0980 /* FavouritesListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB69E66827B43111003A0980 /* FavouritesListViewController.storyboard */; };
+		FB69E66B27B4567F003A0980 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E66A27B4567F003A0980 /* ImageViewModel.swift */; };
+		FB69E66D27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E66C27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift */; };
+		FB69E66F27B4E444003A0980 /* ImageDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E66E27B4E444003A0980 /* ImageDetailViewDelegate.swift */; };
+		FB69E67127B4E479003A0980 /* DisplayFavouriteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB69E67027B4E479003A0980 /* DisplayFavouriteDelegate.swift */; };
 		FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */; };
 		FB9D4C7927B2E44B0056ECC2 /* APOD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB9D4C7727B2E44B0056ECC2 /* APOD.xcdatamodeld */; };
 		FB9D4C7B27B2E4530056ECC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */; };
@@ -36,7 +39,10 @@
 /* Begin PBXFileReference section */
 		FB69E66427B42933003A0980 /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
 		FB69E66527B42933003A0980 /* FavouritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesTableViewCell.xib; sourceTree = "<group>"; };
-		FB69E66827B43111003A0980 /* FavouritesListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesListViewController.storyboard; sourceTree = "<group>"; };
+		FB69E66A27B4567F003A0980 /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		FB69E66C27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentImageDetailViewDelegate.swift; sourceTree = "<group>"; };
+		FB69E66E27B4E444003A0980 /* ImageDetailViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewDelegate.swift; sourceTree = "<group>"; };
+		FB69E67027B4E479003A0980 /* DisplayFavouriteDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFavouriteDelegate.swift; sourceTree = "<group>"; };
 		FB9D4C6B27B2E44B0056ECC2 /* APOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9D4C6E27B2E44B0056ECC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB9D4C7827B2E44B0056ECC2 /* APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APOD.xcdatamodel; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				FB9D4C9527B3055E0056ECC2 /* Feature */,
 				FB9D4C8827B2E4C10056ECC2 /* UI */,
 				FB9D4C8527B2E4630056ECC2 /* Main */,
+				FB9D4CB227B3C92A0056ECC2 /* Extensions */,
 				FB9D4CA927B398790056ECC2 /* Helpers */,
 				FB9D4C7A27B2E4530056ECC2 /* Assets.xcassets */,
 				FB9D4C7C27B2E4530056ECC2 /* LaunchScreen.storyboard */,
@@ -184,7 +191,6 @@
 			children = (
 				FB9D4CA727B392180056ECC2 /* Constants.swift */,
 				FB9D4CAA27B3988D0056ECC2 /* Reachability.swift */,
-				FB9D4CB227B3C92A0056ECC2 /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -194,6 +200,9 @@
 			children = (
 				FB9D4CAE27B3C3F90056ECC2 /* String.swift */,
 				FB9D4CB027B3C91E0056ECC2 /* UITextField.swift */,
+				FB69E66C27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift */,
+				FB69E66E27B4E444003A0980 /* ImageDetailViewDelegate.swift */,
+				FB69E67027B4E479003A0980 /* DisplayFavouriteDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,7 +213,7 @@
 				FB9D4CB627B428990056ECC2 /* FavouritesListViewController.swift */,
 				FB69E66427B42933003A0980 /* FavouritesTableViewCell.swift */,
 				FB69E66527B42933003A0980 /* FavouritesTableViewCell.xib */,
-				FB69E66827B43111003A0980 /* FavouritesListViewController.storyboard */,
+				FB69E66A27B4567F003A0980 /* ImageViewModel.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -272,7 +281,6 @@
 				FB9D4C7B27B2E4530056ECC2 /* Assets.xcassets in Resources */,
 				FB9D4C9427B2FC7B0056ECC2 /* ImageDetailsViewController.storyboard in Resources */,
 				FB9D4C8F27B2FBB70056ECC2 /* SearchImageViewController.storyboard in Resources */,
-				FB69E66927B43111003A0980 /* FavouritesListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +299,7 @@
 				FB9D4C9827B305C50056ECC2 /* Image.swift in Sources */,
 				FB9D4CA027B38B370056ECC2 /* ImageDataMapper.swift in Sources */,
 				FB69E66627B42933003A0980 /* FavouritesTableViewCell.swift in Sources */,
+				FB69E66F27B4E444003A0980 /* ImageDetailViewDelegate.swift in Sources */,
 				FB9D4C6F27B2E44B0056ECC2 /* AppDelegate.swift in Sources */,
 				FB9D4CB727B428990056ECC2 /* FavouritesListViewController.swift in Sources */,
 				FB9D4C9E27B38AAB0056ECC2 /* HTTPClient.swift in Sources */,
@@ -300,7 +309,10 @@
 				FB9D4C8A27B2E5020056ECC2 /* SearchImageViewController.swift in Sources */,
 				FB9D4C8727B2E4AD0056ECC2 /* APODCoordinator.swift in Sources */,
 				FB9D4C9227B2FC670056ECC2 /* ImageDetailsViewController.swift in Sources */,
+				FB69E66B27B4567F003A0980 /* ImageViewModel.swift in Sources */,
 				FB9D4CB127B3C91E0056ECC2 /* UITextField.swift in Sources */,
+				FB69E66D27B4E36A003A0980 /* PresentImageDetailViewDelegate.swift in Sources */,
+				FB69E67127B4E479003A0980 /* DisplayFavouriteDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

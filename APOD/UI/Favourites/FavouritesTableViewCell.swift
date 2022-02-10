@@ -7,26 +7,18 @@
 
 import UIKit
 
-class FavouritesTableViewCell: UITableViewCell {
+final class FavouritesTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
-    var favouritesCellViewModel: Image? {
-        didSet {
-            titleLabel.text = favouritesCellViewModel?.title
-            dateLabel.text = favouritesCellViewModel?.date
-        }
-    }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    // MARK: - Properties
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var favouritesCellViewModel: ImageViewModel? {
+        didSet {
+            titleLabel.text = favouritesCellViewModel?.imageInfo.title
+            dateLabel.text = favouritesCellViewModel?.imageInfo.date
+        }
     }
 }

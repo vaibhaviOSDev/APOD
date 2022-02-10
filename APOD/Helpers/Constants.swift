@@ -12,9 +12,10 @@ struct Constants {
     static let SearchImageViewNibName = "SearchImageViewController"
     static let ImageDetailsViewNibName = "ImageDetailsViewController"
     
-    static let FavouritesListViewNibName = "FavouritesListViewController"
     static let FavouriteImageCellNibName = "FavouritesTableViewCell"
     static let FavouriteImageCellIdentifier = "ImageInfo"
+    static let FavouriteIconName = "mark"
+    static let NotFavouriteIconName = "unmark"
 
     static let API_KEY = "WFVTwvBHNihnrS6LFr5QJpNImgKOTOeuUElfdzXe"
     static let API = "https://api.nasa.gov/planetary/apod?"

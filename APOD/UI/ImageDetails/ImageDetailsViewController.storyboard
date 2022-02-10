@@ -11,13 +11,13 @@
         <!--Image Details View Controller-->
         <scene sceneID="yQQ-m0-rZn">
             <objects>
-                <viewController storyboardIdentifier="ImageDetailsViewController" id="2Tv-0q-CeA" customClass="ImageDetailsViewController" customModule="NASA_APOD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageDetailsViewController" id="2Tv-0q-CeA" customClass="ImageDetailsViewController" customModule="APOD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nmY-3Y-PLL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2E-dg-1e6">
-                                <rect key="frame" x="15" y="75" width="384" height="45"/>
+                                <rect key="frame" x="15" y="75" width="300" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="uc3-N6-vvr"/>
                                 </constraints>
@@ -50,14 +50,9 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="APOD" id="8Ow-46-wBk">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="TGK-Pj-Eql">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="TGK-Pj-Eql">
                                             <connections>
                                                 <action selector="cancelButtonPressed" destination="2Tv-0q-CeA" id="JDj-KM-ftb"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Mark As Favourite" id="FPa-up-8Ps">
-                                            <connections>
-                                                <action selector="markAsFavourite" destination="2Tv-0q-CeA" id="hGp-54-eWX"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -72,13 +67,30 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19i-cB-axT">
+                                <rect key="frame" x="354" y="75" width="35" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="L0k-ZO-FMD"/>
+                                    <constraint firstAttribute="height" constant="35" id="SbO-sK-67Q"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="markAsFavourite" destination="2Tv-0q-CeA" eventType="touchUpInside" id="QaZ-zU-njw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WC3-3u-zju"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gP6-n0-G6g" firstAttribute="top" secondItem="nmY-3Y-PLL" secondAttribute="top" id="8Kx-Or-juO"/>
                             <constraint firstItem="WC3-3u-zju" firstAttribute="trailing" secondItem="oGa-9T-XZb" secondAttribute="trailing" constant="15" id="8tR-D2-Wfn"/>
+                            <constraint firstItem="19i-cB-axT" firstAttribute="top" secondItem="gP6-n0-G6g" secondAttribute="bottom" constant="30" id="DeK-U5-skZ"/>
                             <constraint firstItem="i8w-qT-A5t" firstAttribute="top" secondItem="3cW-X4-hh4" secondAttribute="bottom" constant="20" id="EBL-MX-TTK"/>
+                            <constraint firstItem="WC3-3u-zju" firstAttribute="trailing" secondItem="19i-cB-axT" secondAttribute="trailing" constant="25" id="KRz-Ya-riO"/>
                             <constraint firstItem="gP6-n0-G6g" firstAttribute="trailing" secondItem="WC3-3u-zju" secondAttribute="trailing" id="M3Q-DJ-kew"/>
                             <constraint firstItem="oGa-9T-XZb" firstAttribute="top" secondItem="i8w-qT-A5t" secondAttribute="bottom" constant="20" id="NiK-gF-llf"/>
                             <constraint firstItem="i2E-dg-1e6" firstAttribute="top" secondItem="gP6-n0-G6g" secondAttribute="bottom" constant="30" id="PXT-4s-JZf"/>
@@ -86,7 +98,7 @@
                             <constraint firstItem="WC3-3u-zju" firstAttribute="trailing" secondItem="i8w-qT-A5t" secondAttribute="trailing" constant="15" id="cep-iC-Do3"/>
                             <constraint firstItem="oGa-9T-XZb" firstAttribute="leading" secondItem="WC3-3u-zju" secondAttribute="leading" constant="15" id="cy1-Ib-9n8"/>
                             <constraint firstItem="gP6-n0-G6g" firstAttribute="leading" secondItem="WC3-3u-zju" secondAttribute="leading" id="duO-nu-jQL"/>
-                            <constraint firstItem="WC3-3u-zju" firstAttribute="trailing" secondItem="i2E-dg-1e6" secondAttribute="trailing" constant="15" id="eNT-Qx-Jsd"/>
+                            <constraint firstItem="WC3-3u-zju" firstAttribute="trailing" secondItem="i2E-dg-1e6" secondAttribute="trailing" constant="99" id="eNT-Qx-Jsd"/>
                             <constraint firstItem="3cW-X4-hh4" firstAttribute="top" secondItem="i2E-dg-1e6" secondAttribute="bottom" constant="20" id="jRY-zN-gaA"/>
                             <constraint firstItem="i8w-qT-A5t" firstAttribute="leading" secondItem="WC3-3u-zju" secondAttribute="leading" constant="15" id="qvY-W5-L0w"/>
                             <constraint firstItem="i2E-dg-1e6" firstAttribute="leading" secondItem="WC3-3u-zju" secondAttribute="leading" constant="15" id="uWe-No-oOL"/>
@@ -94,9 +106,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="TGK-Pj-Eql" id="qGx-XN-Olk"/>
+                        <outlet property="closeButton" destination="TGK-Pj-Eql" id="bTS-P4-QXc"/>
                         <outlet property="dateLabel" destination="3cW-X4-hh4" id="Mm4-Pz-Fqn"/>
-                        <outlet property="favouriteButton" destination="FPa-up-8Ps" id="oSl-Nk-AX8"/>
+                        <outlet property="favouriteButton" destination="19i-cB-axT" id="Ppp-4M-G68"/>
                         <outlet property="imageDescriptionLabel" destination="oGa-9T-XZb" id="rZW-8w-hJ3"/>
                         <outlet property="imageTitle" destination="i2E-dg-1e6" id="YIy-kj-Dce"/>
                         <outlet property="imageView" destination="i8w-qT-A5t" id="zIo-QS-Y6S"/>

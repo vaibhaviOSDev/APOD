@@ -11,13 +11,10 @@ extension String {
     
     public func isImage() -> Bool {
         let imageFormats = ["jpg", "png", "gif"]
-
-        if URL(string: self) != nil  {
-
-            let extensi = (self as NSString).pathExtension
-
-            return imageFormats.contains(extensi)
+        guard URL(string: self) != nil  else {
+            return false
         }
-        return false
+        let imageExtension = (self as NSString).pathExtension
+        return imageFormats.contains(imageExtension)
     }
 }

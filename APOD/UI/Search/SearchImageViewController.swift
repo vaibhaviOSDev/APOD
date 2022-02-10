@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchImageViewController: UIViewController {
+final class SearchImageViewController: UIViewController {
 
     // MARK: - IB Outlets
     

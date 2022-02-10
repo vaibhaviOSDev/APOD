@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoteWithLocalFallBackImageLoader {
+public final class RemoteWithLocalFallBackImageLoader {
     public typealias Result = ImageLoaderResult
 
     private let remoteImageLoader: RemoteImageLoader

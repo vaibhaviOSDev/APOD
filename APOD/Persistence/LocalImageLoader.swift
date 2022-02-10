@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LocalImageLoader {
+public final class LocalImageLoader {
     
     public typealias Result = ImageLoaderResult
 
