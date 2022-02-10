@@ -11,10 +11,11 @@ APOD (Astronomy Pic of the Day) has been developed using Apple's Swift programmi
 
 
 ### Prerequisites
-    iOS 13 & above
-    Xcode 12 & above
-    Swift 4.0 & above
-
+    
+    iPhone device only with iOS 13 & above in Portrait mode.
+    Xcode 12 & above.
+    Swift 4.0 & above.
+    
 ### Installation
 Whent the XCode is installed & ready the user can clone/download the repository once done he/she can select the iOS simulator of one's choice & run the application
 
